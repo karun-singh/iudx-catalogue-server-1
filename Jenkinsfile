@@ -18,7 +18,7 @@ pipeline {
     stage('Building images') {
       steps{
         script {
-          echo 'Pulled - ' + env.GIT_BRANCH
+          echo 'Pulled me - ' + env.GIT_BRANCH
           devImage = docker.build( devRegistry, "-f ./docker/dev.dockerfile .")
           deplImage = docker.build( deplRegistry, "-f ./docker/prod.dockerfile .")
           testImage = docker.build( testRegistry, "-f ./docker/test.dockerfile .")
